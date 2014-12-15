@@ -28,16 +28,34 @@ def random_col(board):
 
 ship_row = random_row(board)
 ship_col = random_col(board)
-guess_row = int(raw_input("Guess Row: "))
-guess_col = int(raw_input("Guess Col: "))
-
 print "Battle ship is in row %s, col %s" % (ship_row, ship_col)
 
-if guess_row == ship_row and guess_col == ship_col:
-	print "Congratulations! You sank my battleship"
+def check_guess(row, col, turn):
+	guess_row = int(raw_input("Guess Row: "))
+	guess_col = int(raw_input("Guess Col: "))
 
+	if guess_row == ship_row and guess_col == ship_col:
+		print "Congratulations! You sank my battleship"
+		return True
+	else:
+		print "You missed my battleship!"
+		if guess_row not in range(5) or \
+		    guess_col not in range(5):
+			print "Oops, that's not even in the ocean."
+		elif board[guess_row][guess_col] == "X":
+			print "You guessed that one already."
+		else:
+			if guess_row in range(5) and guess_col in range(5):
+				board[guess_row][guess_col] = "X"
+		if turn == 3:
+			print "Game Over"
+		return False
 
-
+for turn in range(4):
+	print
+	print "%s" % (turn + 1)
+	if check_guess(ship_row, ship_col, turn):
+		break
 
 
 
