@@ -28,7 +28,7 @@ def random_col(board):
 
 ship_row = random_row(board)
 ship_col = random_col(board)
-print "Battle ship is in row %s, col %s" % (ship_row, ship_col)
+
 
 def check_guess(row, col, turn):
 	guess_row = int(raw_input("Guess Row: "))
@@ -57,6 +57,7 @@ for turn in range(4):
 	if check_guess(ship_row, ship_col, turn):
 		break
 
+print "Battle ship is in row %s, col %s" % (ship_row, ship_col)
 
 
 
