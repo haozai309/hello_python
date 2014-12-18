@@ -45,6 +45,7 @@ def reverse(text):
 	return result
 
 
+# remove the vowel characters in text
 def anti_vowel(text):
 	result = ""
 	for char in text:
@@ -56,6 +57,34 @@ def anti_vowel(text):
 anti_vowel("Hey You!")
 
 
+# count the item occured in a list named sequence
+def count(sequence, item):
+	number = 0
+	for element in sequence:
+		if element == item:
+			number += 1
+	return number
+
+
+# replace the word in text with same length of "*"
+def censor(text, word):
+	result = []
+	for item in text.split():
+		if item == word:
+			item = "*" * len(item)
+		result.append(item)
+	return " ".join(result)
+
+print censor("this hack is wack hack", "hack") 
+
+
+# only keep then even number
+def purify(numbers):
+	result = []
+	for num in numbers:
+		if num > 1 and num % 2 == 0:
+			result.append(num)
+	return result
 
 
 
