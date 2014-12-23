@@ -87,7 +87,20 @@ def purify(numbers):
 	return result
 
 
+# try a little multiplication
+def product(numbers):
+	result = 1
+	for num in numbers:
+		result *= num
+	return result
 
+# remove the duplicates
+def remove_duplicates(target):
+	result = []
+	for item in target:
+		if item not in result:
+			result.append(item)
+	return result
 
 
 
