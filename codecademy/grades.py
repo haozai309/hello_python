@@ -6,11 +6,28 @@ def print_grades(grades):
 
 print_grades(grades)
 
-
 def grades_sum(scores):
 	total = 0
 	for item in scores:
 		total += item
 	print total
+	return total
 
-grades_sum(grades)
+print grades_sum(grades)
+
+
+def grades_average(grades):
+	return grades_sum(grades) / float(len(grades))
+
+print grades_average(grades)
+
+def grades_variance(scores):
+	average = grades_average(scores)
+	variance = 0
+	for score in scores:
+		variance += (average - score) ** 2
+	variance /= len(scores)
+	return variance
+
+print grades_variance(grades)
+
