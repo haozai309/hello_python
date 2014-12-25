@@ -38,7 +38,8 @@ print backwards_by_tens
 
 
 to_21 = range(1, 22)
-#odds = [i for item in to_21 if item % 2 == 1]
+#odds = [i for i in to_21 if i % 2 == 1]
 odds = to_21[::2]
 middle_third = to_21[7:14]
 
+threes_and_fives = [i for i in range(1, 16) if i % 3 == 0 or i % 5 == 0]
