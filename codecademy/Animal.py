@@ -2,6 +2,7 @@
 class Animal(object):
 	"""Makes cute animals."""
 	is_alive = True
+	health = "good"
 	# For initializing our instance objects
 	def __init__(self, name, age, is_hungry):
 		self.name = name
@@ -27,3 +28,23 @@ print panda.name, panda.age, panda.is_hungry, panda.is_alive
 
 tiger = Animal("Tiger", 5, False)
 tiger.description()
+
+
+hippo = Animal("Jake", 12, False)
+sloth = Animal("sloth", 3, True)
+ocelot = Animal("ocelot", 5, False)
+
+print hippo.health
+
+sloth.health = "bad"
+
+print sloth.health
+print ocelot.health
+
+
+
+
+
+
+
+
