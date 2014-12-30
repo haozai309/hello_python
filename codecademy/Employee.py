@@ -9,7 +9,15 @@ class Employee(object):
 
 # Add your code below!
 class PartTimeEmployee(Employee):
-	"""Part time Employee"""
-	def calculate_wage(self, hours):
-		self.hours = hours
-		return hours * 12.00
+    """Part time Employee"""
+    def calculate_wage(self, hours):
+        self.hours = hours
+        return hours * 12.00
+
+    def full_time_wage(self, hours):
+        return super(PartTimeEmployee, self).calculate_wage(hours)
+
+milton = PartTimeEmployee("milton")
+print milton.full_time_wage(10)
+
+
