@@ -13,7 +13,7 @@ See [pythonchallenge][1] the challenges of pytho.
 
 ### Puzzle 2
 
-cat output.txt | tr "abcdefghijklmnopqrstuvwxyz" "cdefghijklmnopqrstuvwxyzab" 
+cat input2.txt | tr "abcdefghijklmnopqrstuvwxyz" "cdefghijklmnopqrstuvwxyzab" 
 
 cat "map" | tr "abcdefghijklmnopqrstuvwxyz" "cdefghijklmnopqrstuvwxyzab" -> ocr
 
