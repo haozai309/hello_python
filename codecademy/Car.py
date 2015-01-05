@@ -23,4 +23,12 @@ class ElectricCar(Car):
         super(ElectricCar, self).__init__(model, color, mpg)
         self.battery_type = battery_type
 
+    def drive_car(self):
+        self.condition = "like new"
+
+
 my_car = ElectricCar("molten salt", "Benz", "Black", 120)
+print my_car.condition
+
+my_car.drive_car()
+print my_car.condition
