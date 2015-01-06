@@ -23,4 +23,6 @@ cat "map" | tr "abcdefghijklmnopqrstuvwxyz" "cdefghijklmnopqrstuvwxyzab" -> ocr
 
 ### Puzzle 3
 
+rare number in mess characters
+equality
 
