@@ -38,12 +38,39 @@ print_words() and print_top().
 """
 
 import sys
+import operator
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
+
+def print_words(filename):
+  my_dic = build_dic(filename)
+  for key in sorted(my_dic.keys()):
+    print key, my_dic[key]
+
+def print_top(filename):
+  my_dic = build_dic(filename)
+  orted_x = sorted(my_dic.items(), key=operator.itemgetter(1), reverse=True)
+  for i in range(20):
+    pair = orted_x[i]
+    print pair[0],
+
+
+def build_dic(filename):
+  word_dic = {}
+  f = open(filename, "rU")
+  for line in f:
+    for word in line.split():
+      word = word.lower()
+      if word in word_dic.keys():
+        word_dic[word] += 1
+      else:
+        word_dic[word] = 1
+  f.close
+  return word_dic
 
 ###
 
