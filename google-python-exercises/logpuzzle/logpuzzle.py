@@ -25,6 +25,20 @@ def read_urls(filename):
   Screens out duplicate urls and returns the urls sorted into
   increasing order."""
   # +++your code here+++
+  f = open(filename, 'r')
+  text = f.read()
+  f.close()
+  
+  result = []
+  links = re.findall(r'\S[\w\/\.-]+puzzle[\w\/\.-]+\S', text)
+  for link in links:
+    result.append("http://code.google.com" + link)
+    print result[-1]
+
+  for i in range(40):
+    print "<img src=\"img%d.jpg\">" % i
+  sys.exit(0)
+  return result
   
 
 def download_images(img_urls, dest_dir):
@@ -36,6 +50,14 @@ def download_images(img_urls, dest_dir):
   Creates the directory if necessary.
   """
   # +++your code here+++
+  if not os.path.exists(dest_dir):
+    os.mkdir(dest_dir)
+    print "mkdir " + dest_dir
+  for i in range(len(img_urls)):
+    print "download form " + img_urls[i]
+    filename = dest_dir + "/img" + str(i)
+    urllib.urlretrieve(img_urls[i], filename)
+  sys.exit(0)
   
 
 def main():
